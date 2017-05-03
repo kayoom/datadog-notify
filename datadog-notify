@@ -47,7 +47,7 @@ if $(echo "$alert_type" | grep -qv 'error\|warning\|info\|success' ); then
   usage
 fi
 
-tag="environment:$(hostname) $4"
+tag="$4"
 tags=$(echo $tag | sed -e's/[\.a-zA-Z0-9:]*/\"&\"/g' -e's/\" \"/\", \"/g' )
 
 api="https://app.datadoghq.com/api/v1"
